@@ -10,12 +10,19 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
+
 var app = express();
 
 // Configure Express
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.raw({type: 'application/jwt'}));
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/example', (req, res) => {
+ res.send('Full name is:${req.body.filename} ${req.body.sourcename} ${req.body.sendername} ${req.body.msg}.');
+ console.log("POST FORM BODY", req.body);
+});
+
 
 //app.use(express.methodOverride());
 //app.use(express.favicon());
