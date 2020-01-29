@@ -20,8 +20,8 @@ app.use(bodyParser.raw({type: 'application/jwt'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/example', (req, res) => {
- res.send('Full name is:${req.body.filename} ${req.body.sourcename} ${req.body.sendername} ${req.body.msg}.');
- console.log("POST FORM BODY", req.body);
+ res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
+ console.log('POST FORM BODY', req.body);
 });
 
 
