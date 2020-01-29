@@ -10,6 +10,7 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
+console.log('in app.js file');
 
 var app = express();
 
