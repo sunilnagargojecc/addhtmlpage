@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/example', (req, res) => {
  res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
  
-sftp.connect({
+/*sftp.connect({
   host: '199.241.140.134',
   port: '4522',
   username: 'ccengage',
@@ -44,7 +44,7 @@ sftp.connect({
    
 }).catch(err => {
   console.log(err, 'catch error');
-});
+});*/
  
  
  console.log('POST FORM BODY', req.body);
