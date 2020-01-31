@@ -21,7 +21,7 @@
                 }									
 			],
           "outArguments": [],
-          "url": "https://nodejsappcustomapp/journeybuilder/execute",
+          "url": "https://testappsn/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,22 +33,22 @@
     "configurationArguments": {
       "applicationExtensionKey": "860adffd-7a8e-4584-b2d8-284c1dba2b47",
       "save": {
-        "url": "https://nodejsappcustomapp/journeybuilder/save",
+        "url": "https://testappsn/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://nodejsappcustomapp/journeybuilder/publish",
+        "url": "https://testappsn/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://nodejsappcustomapp/journeybuilder/stop",
+        "url": "https://testappsn/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://nodejsappcustomapp/journeybuilder/validate",
+        "url": "https://testappsn/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }
