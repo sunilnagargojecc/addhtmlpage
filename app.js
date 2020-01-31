@@ -10,8 +10,8 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
-/*let Client = require('ssh2-sftp-client');
-let sftp = new Client();*/
+let Client = require('ssh2-sftp-client');
+let sftp = new Client();
 
 
 
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/example', (req, res) => {
  res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
  
-/*sftp.connect({
+sftp.connect({
   host: '199.241.140.134',
   port: '4522',
   username: 'ccengage',
@@ -44,7 +44,7 @@ app.post('/example', (req, res) => {
    
 }).catch(err => {
   console.log(err, 'catch error');
-});*/
+});
  
  
  console.log('POST FORM BODY', req.body);
