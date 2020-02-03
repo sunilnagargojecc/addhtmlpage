@@ -64,6 +64,7 @@ exports.edit = function (req, res) {
 exports.save = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
+	res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
     logData(req);
     res.send(200, 'Save');
 };
@@ -74,6 +75,7 @@ exports.save = function (req, res) {
 exports.execute = function (req, res) {
 
     // example on how to decode JWT
+	res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         // verification error -> unauthorized request
@@ -113,6 +115,7 @@ exports.publish = function (req, res) {
 exports.validate = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
+	res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
     logData(req);
     res.send(200, 'Validate');
 };
