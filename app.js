@@ -27,6 +27,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/example', (req, res) => {
  res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
  
+ var eventDefinitionKey;
+ connection.trigger('requestTriggerEventDefinition');
+
+ connection.on('requestedTriggerEventDefinition',
+ function(eventDefinitionModel) {
+    if(eventDefinitionModel){
+
+        eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
+        console.log(">>>Event Definition Key " + eventDefinitionKey);
+        /*If you want to see all*/
+        console.log('>>>Request Trigger', 
+        JSON.stringify(eventDefinitionModel));
+    }
+
+});
+ 
 /*sftp.connect({
   host: '199.241.140.134',
   port: '4522',
