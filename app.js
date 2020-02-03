@@ -10,8 +10,8 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
-let Client = require('ssh2-sftp-client');
-let sftp = new Client();
+/*let Client = require('ssh2-sftp-client');
+let sftp = new Client();*/
 
 
 
