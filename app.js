@@ -24,12 +24,12 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.raw({type: 'application/jwt'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/example', (req, res) => {
+/*app.post('/example', (req, res) => {
  res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
  
 	
  console.log('POST FORM BODY', req.body);
-});
+});*/
 
 
 //app.use(express.methodOverride());
@@ -48,22 +48,10 @@ app.post('/login', routes.login );
 app.post('/logout', routes.logout );
 
 // Custom Hello World Activity Routes
-app.post('/journeybuilder/save/', (req, res) => {
- res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
- 
-	
- console.log('POST FORM BODY', req.body);
-});
-
+app.post('/journeybuilder/save/', activity.save );
 app.post('/journeybuilder/validate/', activity.validate );
 app.post('/journeybuilder/publish/', activity.publish );
-
-app.post('/journeybuilder/execute/', (req, res) => {
- res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
- 
-	
- console.log('POST FORM BODY', req.body);
-});
+app.post('/journeybuilder/execute/', activity.execute );
 
 
 http.createServer(app).listen(app.get('port'), function(){
