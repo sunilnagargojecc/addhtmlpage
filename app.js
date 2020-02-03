@@ -27,12 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/example', (req, res) => {
  res.send(req.body.filename + req.body.sourcename + req.body.sendername + req.body.msg);
  
- connection.trigger('requestSchema');
- 
- connection.on('requestedSchema', function (data) {
-   // save schema
-   console.log('*** Schema ***', JSON.stringify(data['schema']));
-});
+
  
 });
  
