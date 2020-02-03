@@ -50,10 +50,7 @@ app.post('/logout', routes.logout );
 // Custom Hello World Activity Routes
 app.post('/journeybuilder/save/', activity.save => {
 
-  connection.on('requestedSchema', function (data) {
-   // save schema
-   console.log('*** Schema ***', JSON.stringify(data['schema']));
-});
+  console.log('SUnil Save');
 
 });
 app.post('/journeybuilder/validate/', activity.validate );
@@ -61,9 +58,8 @@ app.post('/journeybuilder/publish/', activity.publish );
 
 app.post('/journeybuilder/execute/', activity.execute => {
 
-  connection.on('requestedSchema', function (data) {
-   // save schema
-   console.log('*** Schema ***', JSON.stringify(data['schema']));
+ console.log('SUnil Execute');
+ console.log('SUnil Execute');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
